@@ -2,9 +2,9 @@
 
 import { cn } from "@/lib/util";
 import { X } from "lucide-react";
-import { useState } from "react";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface RegisterAsOption {
   label: string;
@@ -26,14 +26,21 @@ const registerAsOptions: RegisterAsOption[] = [
 ];
 
 export default function RegisterAsModal() {
-  const [registerAs, setRegisterAs] = useState<"attendee" | "speaker">(
-    "attendee"
-  );
+  const { registeringAs, setRegisteringAs, setIsModalOpen } = useAuth();
   const router = useRouter();
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-      <div className="relative flex flex-col items-center justify-center bg-white rounded-xl shadow-lg w-full md:w-[70%] pt-24 md:py-16 overflow-y-auto max-sm:h-[95vh]">
-        <span className="absolute top-4 right-4 flex items-center cursor-pointer bg-[#F3F3F3] hover:bg-gray-300 transition-colors rounded-full p-1">
+    <div
+      className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
+      onClick={() => setIsModalOpen?.(false)}
+    >
+      <div
+        className="relative flex flex-col items-center justify-center bg-white rounded-xl shadow-lg w-full md:w-[70%] pt-24 md:py-16 overflow-y-auto max-sm:h-[95vh]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <span
+          className="absolute top-4 right-4 flex items-center cursor-pointer bg-[#F3F3F3] hover:bg-gray-300 transition-colors rounded-full p-1"
+          onClick={() => setIsModalOpen?.(false)}
+        >
           <X className="w-5 h-5" />
         </span>
         <div className="flex flex-col items-center space-y-4 max-sm:py-5 max-sm:px-5">
@@ -52,11 +59,12 @@ export default function RegisterAsModal() {
                   className={cn(
                     "flex flex-col items-start space-x-4 my-4 px-4 py-10 max-sm:py-5 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors md:w-sm",
                     {
-                      "bg-gray-50": registerAs !== option.value,
-                      "border-2 border-[#662D91]": registerAs === option.value,
+                      "bg-gray-50": registeringAs !== option.value,
+                      "border-2 border-[#662D91]":
+                        registeringAs === option.value,
                     }
                   )}
-                  onClick={() => setRegisterAs(option.value)}
+                  onClick={() => setRegisteringAs?.(option.value)}
                 >
                   <div className="flex-shrink-0">
                     <input
@@ -64,8 +72,8 @@ export default function RegisterAsModal() {
                       name="registerAs"
                       id={option.value}
                       value={option.value}
-                      checked={registerAs === option.value}
-                      onChange={() => setRegisterAs(option.value)}
+                      checked={registeringAs === option.value}
+                      onChange={() => setRegisteringAs?.(option.value)}
                       className="h-5 w-5 focus:ring-[#662D91] border-gray-300 rounded accent-[#662D91]"
                     />
                   </div>
@@ -84,7 +92,10 @@ export default function RegisterAsModal() {
             <Button
               variant="primary"
               className="mt-5 mx-auto px-10"
-              onClick={() => router.push("/sign-up")}
+              onClick={() => {
+                router.push("/sign-up");
+                setIsModalOpen?.(false);
+              }}
             >
               Continue
             </Button>

@@ -1,3 +1,6 @@
+"use client";
+
+import { useAuth } from "@/contexts/AuthContext";
 import Image from "next/image";
 
 export default function AuthWrapper({
@@ -5,9 +8,10 @@ export default function AuthWrapper({
 }: {
   children: React.ReactNode;
 }) {
+  const { registeringAs } = useAuth();
   return (
     <main className="flex h-screen bg-gray-100 space-x-10">
-      <div className="flex-1 flex items-center justify-end p-4">
+      <div className="flex-1 items-center justify-end p-4 hidden xl:flex">
         <div className="relative w-full max-w-lg h-full rounded-2xl overflow-hidden shadow-lg">
           <Image
             src="/imgs/auth-bg.jpg"
@@ -25,14 +29,17 @@ export default function AuthWrapper({
             />
             <h2 className="text-xl font-bold">FacelessCon</h2>
           </div>
-          <p className="absolute bottom-4 right-7 text-white italic z-20">
-            🎉 Join as a Speaker
+          <p className="absolute bottom-4 right-7 text-white italic space-x-1 z-20">
+            <span>🎉 Join as {registeringAs === "attendee" ? "an" : "a"}</span>
+            <span className="capitalize">
+              {registeringAs.charAt(0).toUpperCase() + registeringAs.slice(1)}
+            </span>
           </p>
         </div>
       </div>
 
-      <div className="flex-1 flex items-center justify-start p-4">
-        <div className="w-full h-full flex justify-center items-center max-w-lg p-10 bg-[#FAFAFA] rounded-2xl">
+      <div className="flex-1 flex items-center justify-start p-4 max-lg:justify-center">
+        <div className="w-full xl:h-full flex justify-center items-center max-w-lg p-10 bg-[#FAFAFA] rounded-2xl">
           {children}
         </div>
       </div>

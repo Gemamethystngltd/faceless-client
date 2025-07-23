@@ -6,6 +6,8 @@ import InputField from "./InputField";
 import SelectField from "./SelectField";
 import { cn } from "@/lib/util";
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import EmailConfirmationModal from "./EmailConfirmationModal";
 
 interface SignUpFormValues {
   fullName: string;
@@ -22,6 +24,7 @@ export default function SignUpForm() {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<SignUpFormValues>({
     defaultValues: {
@@ -32,18 +35,23 @@ export default function SignUpForm() {
       country: "",
     },
   });
+  const { isModalOpen, setIsModalOpen } = useAuth();
 
   // Watch the values of industry and country to conditionally style the select fields
   const [industryValue, countryValue] = watch(["industry", "country"]);
 
   const onSubmit = (data: SignUpFormValues) => {
     console.log("Form submitted:", data);
+    setIsModalOpen?.(true);
+    reset();
     // Handle form submission logic here
   };
 
   return (
     <div className="">
-      <h1 className="font-bold text-3xl">Register for Faceless Con 2025</h1>
+      <h1 className="font-bold text-3xl max-sm:text-xl">
+        Register for Faceless Con 2025
+      </h1>
       <form className="mt-6 space-y-4" onSubmit={handleSubmit(onSubmit)}>
         <InputField
           label="Full Name"
@@ -109,6 +117,7 @@ export default function SignUpForm() {
           Register
         </Button>
       </form>
+      {isModalOpen && <EmailConfirmationModal />}
     </div>
   );
 }

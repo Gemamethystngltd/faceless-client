@@ -3,6 +3,8 @@
 import { useForm } from "react-hook-form";
 import Button from "./Button";
 import InputField from "./InputField";
+import EmailConfirmationModal from "./EmailConfirmationModal";
+import RegisterAsModal from "./RegisterAsModal";
 
 interface LoginFormValues {
   email: string;
@@ -26,7 +28,9 @@ export default function LoginForm() {
 
   return (
     <div>
-      <h1 className="font-bold text-3xl">Login for Faceless Con 2025</h1>
+      <h1 className="font-bold text-3xl max-sm:text-xl">
+        Login for Faceless Con 2025
+      </h1>
       <form className="mt-6" onSubmit={handleSubmit(onSubmit)}>
         <InputField
           label="Email Address"
@@ -45,6 +49,8 @@ export default function LoginForm() {
           Login
         </Button>
       </form>
+      {/* <EmailConfirmationModal /> */}
+      {/* <RegisterAsModal /> */}
     </div>
   );
 }

@@ -7,13 +7,16 @@ export default function EmailConfirmationModal() {
   return (
     <div
       className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
-      onClick={(e) => {
-        e.stopPropagation();
-        setIsModalOpen?.(false);
-      }}
+      onClick={() => setIsModalOpen?.(false)}
     >
-      <div className="relative flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-lg w-1/2 max-sm:w-[90%] py-16">
-        <span className="absolute top-2 right-2 flex items-center cursor-pointer bg-[#F3F3F3] hover:bg-gray-300 transition-colors rounded-full p-1">
+      <div
+        className="relative flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-lg w-1/2 max-sm:w-[90%] py-16"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <span
+          className="absolute top-2 right-2 flex items-center cursor-pointer bg-[#F3F3F3] hover:bg-gray-300 transition-colors rounded-full p-1"
+          onClick={() => setIsModalOpen?.(false)}
+        >
           <X className="w-5 h-5" />
         </span>
         <div className="flex flex-col items-center space-y-4 text-center">
