@@ -31,7 +31,7 @@ export default function RegisterAsModal() {
   return (
     <div
       className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
-      onClick={() => setIsModalOpen?.(false)}
+      onClick={() => setIsModalOpen(false)}
     >
       <div
         className="relative flex flex-col items-center justify-center bg-white rounded-xl shadow-lg w-full md:w-[70%] pt-24 md:py-16 overflow-y-auto max-sm:h-[95vh]"
@@ -39,7 +39,7 @@ export default function RegisterAsModal() {
       >
         <span
           className="absolute top-4 right-4 flex items-center cursor-pointer bg-[#F3F3F3] hover:bg-gray-300 transition-colors rounded-full p-1"
-          onClick={() => setIsModalOpen?.(false)}
+          onClick={() => setIsModalOpen(false)}
         >
           <X className="w-5 h-5" />
         </span>
@@ -64,7 +64,7 @@ export default function RegisterAsModal() {
                         registeringAs === option.value,
                     }
                   )}
-                  onClick={() => setRegisteringAs?.(option.value)}
+                  onClick={() => setRegisteringAs(option.value)}
                 >
                   <div className="flex-shrink-0">
                     <input
@@ -73,7 +73,7 @@ export default function RegisterAsModal() {
                       id={option.value}
                       value={option.value}
                       checked={registeringAs === option.value}
-                      onChange={() => setRegisteringAs?.(option.value)}
+                      onChange={() => setRegisteringAs(option.value)}
                       className="h-5 w-5 focus:ring-[#662D91] border-gray-300 rounded accent-[#662D91]"
                     />
                   </div>
@@ -94,7 +94,7 @@ export default function RegisterAsModal() {
               className="mt-5 mx-auto px-10"
               onClick={() => {
                 router.push("/sign-up");
-                setIsModalOpen?.(false);
+                setIsModalOpen(false);
               }}
             >
               Continue

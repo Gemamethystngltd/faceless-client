@@ -10,9 +10,9 @@ import {
 
 interface AuthContextType {
   registeringAs: "attendee" | "speaker";
-  setRegisteringAs?: Dispatch<SetStateAction<"attendee" | "speaker">>;
-  isModalOpen?: boolean;
-  setIsModalOpen?: Dispatch<SetStateAction<boolean>>;
+  setRegisteringAs: Dispatch<SetStateAction<"attendee" | "speaker">>;
+  isModalOpen: boolean;
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
