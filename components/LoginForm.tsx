@@ -3,8 +3,6 @@
 import { useForm } from "react-hook-form";
 import Button from "./Button";
 import InputField from "./InputField";
-import EmailConfirmationModal from "./EmailConfirmationModal";
-import RegisterAsModal from "./RegisterAsModal";
 
 interface LoginFormValues {
   email: string;
@@ -49,8 +47,6 @@ export default function LoginForm() {
           Login
         </Button>
       </form>
-      {/* <EmailConfirmationModal /> */}
-      {/* <RegisterAsModal /> */}
     </div>
   );
 }
