@@ -2,12 +2,12 @@ import Button from "./Button";
 import LiveIcon from "./icons/LiveIcon";
 import DashboardStat from "./DashboardStat";
 import { CalendarDays } from "lucide-react";
+import Webinars from "./Webinars";
 
 export default function Dashboard() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-5">
       <div className="grid grid-cols-[2fr_1fr] gap-5">
-        {/* Left Column */}
         <div className="w-full space-y-5">
           <div className="border border-[#662D91] flex justify-between items-center px-5 py-7 rounded-2xl bg-[url('/svgs/faceless-skeleton.svg')] bg-no-repeat">
             <div className="w-1/2 space-y-5">
@@ -46,13 +46,15 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* Right Column */}
         <div className="flex flex-col justify-end bg-[#F0EAF4] rounded-2xl px-4 py-6">
           <Button>Subscribe</Button>
         </div>
       </div>
 
-      <div></div>
+      <div className="mt-5">
+        <p className="text-2xl font-semibold">Discover Webinars</p>
+        <Webinars length={3} />
+      </div>
     </div>
   );
 }
