@@ -1,10 +1,10 @@
+import { webinars } from "@/lib/dummyWebinars";
 import Button from "./Button";
-import LiveIcon from "./icons/LiveIcon";
 import DashboardStat from "./DashboardStat";
-import { CalendarDays } from "lucide-react";
 import Webinars from "./Webinars";
 
 export default function Dashboard() {
+  const dashboardWebinars = webinars.slice(0, 3);
   return (
     <div className="flex flex-col space-y-5">
       <div className="grid grid-cols-[2fr_1fr] gap-5">
@@ -26,19 +26,19 @@ export default function Dashboard() {
 
           <div className="grid grid-cols-3 gap-5">
             <DashboardStat
-              icon={LiveIcon}
+              icon="LiveIcon"
               status="Ongoing"
               value="1,103 webinars"
               className="bg-[#912D7F]"
             />
             <DashboardStat
-              icon={CalendarDays}
+              icon="CalendarDays"
               status="Upcoming"
               value="0"
               className="bg-[#FFD900] text-black"
             />
             <DashboardStat
-              icon={CalendarDays}
+              icon="CalendarDays"
               status="Finished"
               value="0"
               className="bg-[#F1F1F1] text-black"
@@ -53,7 +53,7 @@ export default function Dashboard() {
 
       <div className="mt-5">
         <p className="text-2xl font-semibold">Discover Webinars</p>
-        <Webinars length={3} />
+        <Webinars webinars={dashboardWebinars} />
       </div>
     </div>
   );

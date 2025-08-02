@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import NotificationDropdown from "./NotificationDropDown";
 import AccountDropDown from "./AccountDropDown";
+import { Breadcrumbs } from "./Breadcrumbs";
 
 const notifications = [
   {
@@ -44,7 +45,8 @@ export default function AppTopNav() {
   }, []);
 
   return (
-    <div className="flex justify-end py-2 px-5">
+    <div className="flex justify-between py-2 px-5">
+      <Breadcrumbs />
       <div className="flex justify-between items-center space-x-3 w-4/5">
         <div className="relative w-3/4">
           <input className="w-full bg-[#F1F1F1] rounded-full p-2 outline-none focus:ring-2 focus:ring-[#532174] transition-colors duration-200 peer" />
