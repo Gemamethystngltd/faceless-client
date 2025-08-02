@@ -65,7 +65,7 @@ export default function AppTopNav() {
             >
               <Bell className="w-6 h-6 text-gray-950" />
               <span className="absolute -top-1.5 -right-1.5 text-red-500 text-sm w-5 h-5 flex items-center justify-center rounded-full font-semibold">
-                12
+                {notifications.length}
               </span>
             </button>
             {notifOpen && (

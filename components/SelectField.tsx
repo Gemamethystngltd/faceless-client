@@ -9,6 +9,7 @@ interface SelectInputProps
   error?: string;
   options?: string[];
   asterisk?: boolean;
+  labelClassName?: string;
 }
 
 export default function SelectField({
@@ -19,12 +20,16 @@ export default function SelectField({
   placeholder,
   asterisk,
   className,
+  labelClassName,
   children,
   ...props
 }: SelectInputProps) {
   return (
     <div className="w-full">
-      <label htmlFor={id} className="block text-xl text-gray-950 mb-1">
+      <label
+        htmlFor={id}
+        className={cn("block text-xl text-gray-950 mb-1", labelClassName)}
+      >
         {label} {asterisk && <span className="text-red-500">*</span>}
       </label>
       <div className="relative">

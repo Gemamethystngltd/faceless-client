@@ -5,6 +5,7 @@ interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   error?: string;
   asterisk?: boolean;
+  labelClassName?: string;
 }
 
 export default function InputField({
@@ -13,11 +14,15 @@ export default function InputField({
   error,
   asterisk,
   className,
+  labelClassName,
   ...props
 }: InputFieldProps) {
   return (
     <div>
-      <label htmlFor={id} className="block text-xl text-gray-950">
+      <label
+        htmlFor={id}
+        className={cn("block text-xl text-gray-950", labelClassName)}
+      >
         {label} {asterisk && <span className="text-red-500">*</span>}
       </label>
       <input

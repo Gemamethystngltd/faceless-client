@@ -1,6 +1,9 @@
+"use client";
+
 import { AlarmClock, CalendarDays } from "lucide-react";
 import Button from "./Button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface WebinarCardProps {
   title: string;
@@ -20,6 +23,7 @@ export default function WebinarCard({
   image,
   price,
 }: WebinarCardProps) {
+  const router = useRouter();
   return (
     <div className="flex justify-between items-center bg-white rounded-2xl p-5 mb-5">
       <div className="flex items-center space-x-3">
@@ -53,7 +57,11 @@ export default function WebinarCard({
       </div>
 
       <div className="flex flex-col space-y-3 justify-center items-end">
-        <Button variant="outline" className="px-10">
+        <Button
+          variant="outline"
+          className="px-10"
+          onClick={() => router.push("/dashboard/register")}
+        >
           Register
         </Button>
         <p className="mr-4 text-gray-500">{price}</p>
