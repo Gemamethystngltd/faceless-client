@@ -11,9 +11,9 @@ export default async function WebinarStatusPage({
 
   return (
     <section>
-      <p className="text-2xl font-semibold capitalize mb-4">
+      <h1 className="text-2xl font-semibold capitalize mb-4">
         {status === "ongoing" ? "Discover Webinars" : `${status} Webinars`}
-      </p>
+      </h1>
       <Webinars webinars={filteredWebinar} />
     </section>
   );
