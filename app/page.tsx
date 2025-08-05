@@ -1,15 +1,15 @@
 
 import Image from "next/image";
-import Navbar from "@/components/dashboard/navbar";
-import Services from "@/components/dashboard/services";
-import Webinar from "@/components/dashboard/webinar";
-import FacelessCon from "@/components/dashboard/facelesscon";
-import Icons from "@/components/dashboard/icons";
-import Speakers from "@/components/dashboard/speakers";
-import ShareKnowledge from "@/components/dashboard/share-knowledge";
-import Testimonials from "@/components/dashboard/testimonials";
-import FAQ from "@/components/dashboard/faq";
-import Footer from "@/components/dashboard/footer";
+import Navbar from "components/dashboard/navbar";
+import Services from "components/dashboard/services";
+import Webinar from "components/dashboard/webinar";
+import FacelessCon from "components/dashboard/facelesscon";
+import Icons from "components/dashboard/icons";
+import Speakers from "components/dashboard/speakers";
+import ShareKnowledge from "components/dashboard/share-knowledge";
+import Testimonials from "components/dashboard/testimonials";
+import FAQ from "components/dashboard/faq";
+import Footer from "components/dashboard/footer";
 
 export default function Home() {
   return (

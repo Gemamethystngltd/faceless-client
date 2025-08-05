@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { testimonials } from "@/lib/data";
+import { testimonials } from "lib/data";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Testimonials() {
@@ -120,9 +120,7 @@ export default function Testimonials() {
                   <div
                     key={i}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      i === currentIndex
-                        ? "bg-[#662D91]"
-                        : "bg-[#662D91]/30"
+                      i === currentIndex ? "bg-[#662D91]" : "bg-[#662D91]/30"
                     }`}
                   />
                 ))}

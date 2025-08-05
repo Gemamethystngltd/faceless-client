@@ -1,5 +1,5 @@
 "use client";
-import { faqs } from "@/lib/data";
+import { faqs } from "lib/data";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
