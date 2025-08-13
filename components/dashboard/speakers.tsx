@@ -15,7 +15,7 @@ export default function Speakers() {
       </div>
 
       {/* Speaker cards grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10 gap-8 justify-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 lg:px-16 mb-10 gap-8 justify-items-center">
         {/* Speaker Card */}
         <div className="bg-[#F1F1F1] rounded-2xl w-full max-w-sm p-6 flex flex-col gap-4 shadow-sm">
           {/* Icon */}

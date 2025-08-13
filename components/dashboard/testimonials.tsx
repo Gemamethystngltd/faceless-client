@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
+  const [direction, setDirection] = useState(1);
 
   const goNext = () => {
     setDirection(1);
@@ -21,9 +21,7 @@ export default function Testimonials() {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      goNext();
-    }, 5000);
+    const interval = setInterval(goNext, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -32,10 +30,7 @@ export default function Testimonials() {
       x: dir > 0 ? 50 : -50,
       opacity: 0,
     }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
+    center: { x: 0, opacity: 1 },
     exit: (dir: number) => ({
       x: dir > 0 ? -50 : 50,
       opacity: 0,
@@ -43,32 +38,40 @@ export default function Testimonials() {
   };
 
   return (
-    <div className="bg-[#F0EAF4] w-full px-16 min-h-screen">
-      {/* Header section */}
-      <div className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto mb-10">
-        <p className="text-[#662D91] mt-32 text-sm">TESTIMONIALS</p>
-        <h2 className="text-black font-bold text-4xl">
+    <div className="bg-[#F0EAF4] w-full px-4 sm:px-8 lg:px-16 py-16">
+      {/* Header */}
+      <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto mb-10">
+        <p className="text-[#662D91] text-xs sm:text-sm mt-4 sm:mt-8">TESTIMONIALS</p>
+        <h2 className="text-black font-bold text-2xl sm:text-3xl lg:text-4xl">
           What They're Saying About Faceless
         </h2>
-        <p className="text-gray-700 text-lg">
-          Unfiltered reviews from the people who use it <br /> speakers and
+        <p className="text-gray-700 text-sm sm:text-base">
+          Unfiltered reviews from the people who use it <br className="hidden sm:block" /> speakers and
           learners alike.
         </p>
       </div>
 
-      {/* Image background container */}
-      <div className="relative w-full max-w-[100rem] h-[50rem] mx-auto mb-40 rounded-2xl overflow-hidden">
+      {/* Image + Box container */}
+      <div className="relative w-full h-[28rem] sm:h-[35rem] lg:h-[50rem] mx-auto mb-20 rounded-2xl overflow-hidden">
         <Image
           src="/images/testimonial.jpg"
           alt="face image"
           fill
-          className="object-cover rounded-2xl"
+          className="object-contain lg:object-cover rounded-2xl"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20 z-10 rounded-2xl" />
 
-        {/* Testimonial box */}
-        <div className="absolute right-20 top-1/2 -translate-y-1/2 z-20">
-          <div className="bg-white h-[20rem] w-[40rem] rounded-xl p-10 shadow-lg flex flex-col justify-between">
+        <div
+          className="
+            absolute z-20
+            bottom-4 right-4
+            w-64
+            sm:top-1/2 sm:right-10 sm:w-[28rem]
+            lg:right-20 lg:w-[40rem]
+            transform sm:-translate-y-1/2
+          "
+        >
+          <div className="bg-white w-full rounded-xl p-4 sm:p-8 shadow-lg flex flex-col justify-between min-h-[10rem] sm:min-h-[18rem] lg:min-h-[20rem]">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -78,48 +81,50 @@ export default function Testimonials() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.5 }}
-                className="flex flex-col gap-2"
+                className="flex flex-col gap-1 sm:gap-2"
               >
-                <span className="text-black text-lg leading-snug">
+                <span className="text-black text-sm sm:text-base lg:text-lg leading-snug">
                   {testimonials[currentIndex].quote}
                 </span>
-                <span className="text-black text-xl font-semibold">
+                <span className="text-black text-base sm:text-lg lg:text-xl font-semibold">
                   {testimonials[currentIndex].name}
                 </span>
-                <span className="text-[#9D9D9D] italic">
+                <span className="text-[#9D9D9D] italic text-xs sm:text-sm">
                   {testimonials[currentIndex].title}
                 </span>
               </motion.div>
             </AnimatePresence>
 
-            {/* Nav buttons + dots */}
-            <div className="flex justify-between items-center mt-6">
+            {/* Nav + dots */}
+            <div className="flex justify-between items-center mt-4 sm:mt-6">
               {/* Arrows */}
-              <div className="flex gap-3">
-                <Image
-                  alt="left button"
-                  src="/images/left-button.png"
-                  width={40}
-                  height={40}
-                  className="cursor-pointer hover:bg-[#662D91] "
-                  onClick={goPrev}
-                />
-                <Image
-                  alt="right button"
-                  src="/images/right-button.png"
-                  width={40}
-                  height={40}
-                  className="cursor-pointer hover:bg-[#662D91]"
-                  onClick={goNext}
-                />
+              <div className="flex gap-2 sm:gap-3">
+                <button onClick={goPrev} aria-label="Previous testimonial" className="p-0">
+                  <Image
+                    alt="left button"
+                    src="/images/left-button.png"
+                    width={28}
+                    height={28}
+                    className="cursor-pointer hover:opacity-80"
+                  />
+                </button>
+                <button onClick={goNext} aria-label="Next testimonial" className="p-0">
+                  <Image
+                    alt="right button"
+                    src="/images/right-button.png"
+                    width={28}
+                    height={28}
+                    className="cursor-pointer hover:opacity-80"
+                  />
+                </button>
               </div>
 
               {/* Dots */}
-              <div className="flex gap-2">
+              <div className="flex gap-1 sm:gap-2">
                 {testimonials.map((_, i) => (
                   <div
                     key={i}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                       i === currentIndex ? "bg-[#662D91]" : "bg-[#662D91]/30"
                     }`}
                   />
