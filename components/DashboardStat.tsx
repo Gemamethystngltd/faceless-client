@@ -29,7 +29,7 @@ export default function DashboardStat({
   return (
     <div
       className={cn(
-        "px-4 py-7 flex justify-center items-center space-x-3 text-white rounded-3xl mt-5 cursor-pointer",
+        "px-4 py-7 flex justify-between md:justify-center items-center space-x-3 text-white rounded-3xl mt-5 cursor-pointer",
         className
       )}
       onClick={() =>
