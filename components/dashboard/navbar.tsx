@@ -6,6 +6,7 @@ import { FaEquals, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/contexts/AuthContext";
 import RegisterAsModal from "../RegisterAsModal";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -97,18 +98,26 @@ export default function Navbar() {
         <div className="hidden laptop:flex items-center gap-10">
           <ul className="flex gap-6 text-[#130022] font-medium">
             {navData.map((item) => (
-              <li
+              <Link
+                href={item.linkto}
                 key={item.linkto}
                 className="cursor-pointer hover:text-[#662D91]"
-                onClick={() => handleNavClick(item.linkto)}
               >
                 {item.name}
-              </li>
+              </Link>
             ))}
           </ul>
           <ul className="flex gap-4 items-center text-[#130022]">
-            <li className="cursor-pointer hover:text-[#662D91]">Login</li>
-            <li className="cursor-pointer bg-[#662D91] text-white px-4 py-2 rounded-full hover:bg-[#4b1a74] transition" onClick={() => setIsModalOpen(true)}>
+            <li
+              className="cursor-pointer hover:text-[#662D91]"
+              onClick={() => router.push("/login")}
+            >
+              Login
+            </li>
+            <li
+              className="cursor-pointer bg-[#662D91] text-white px-4 py-2 rounded-full hover:bg-[#4b1a74] transition"
+              onClick={() => setIsModalOpen(true)}
+            >
               Start for free
             </li>
           </ul>
@@ -143,7 +152,10 @@ export default function Navbar() {
               ))}
               <hr className="border border-t-4 w-full text-webpurple" />
               <motion.li variants={itemVariants}>
-                <button className="mt-6 px-4 py-2 rounded-md bg-[#662D91] text-white font-bold text-md tablet:text-lg uppercase tracking-widest">
+                <button
+                  className="mt-6 px-4 py-2 rounded-md bg-[#662D91] text-white font-bold text-md tablet:text-lg uppercase tracking-widest"
+                  onClick={() => router.push("/login")}
+                >
                   Login
                 </button>
               </motion.li>
