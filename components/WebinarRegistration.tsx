@@ -56,8 +56,8 @@ export default function WebinarRegistration() {
           className="w-full h-40 object-cover rounded-2xl"
         />
       </div>
-      <div className="flex justify-between mt-10 space-x-5">
-        <div className="w-1/2 space-y-3">
+      <div className="flex max-sm:flex-col max-sm:space-y-5 justify-between mt-10 md:space-x-5">
+        <div className="md:w-1/2 space-y-3">
           <div className="space-y-5">
             <div className="space-y-3">
               <h2 className="font-medium text-3xl">
@@ -128,7 +128,7 @@ export default function WebinarRegistration() {
           </div>
         </div>
 
-        <div className="w-1/2 p-7 border border-gray-400 rounded-3xl flex flex-col h-full">
+        <div className="md:w-1/2 p-7 border border-gray-400 rounded-3xl flex flex-col h-full">
           <h2 className="text-2xl">Register for Professional Oil&Gas Con...</h2>
           <form
             className="flex flex-col flex-1 mt-5"
