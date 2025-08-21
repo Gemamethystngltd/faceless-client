@@ -71,7 +71,7 @@ export default function Testimonials() {
             transform sm:-translate-y-1/2
           "
         >
-          <div className="bg-white w-full rounded-xl p-4 sm:p-8 shadow-lg flex flex-col justify-between min-h-[10rem] sm:min-h-[18rem] lg:min-h-[20rem]">
+          <div className="bg-white rounded-xl p-4 sm:p-8 shadow-lg flex flex-col justify-between w-[10rem] h-[10rem] phoneL:w-[15rem] phoneL:h-[10rem] phoneL:ml-5 mb-32 md:w-[20rem] md:h-[19rem] ml-20 md:ml-32 lg:w-[30rem] lg:h-[15rem] lg:ml-48 ">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -81,22 +81,22 @@ export default function Testimonials() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.5 }}
-                className="flex flex-col gap-1 sm:gap-2"
+                className="flex flex-col gap-1"
               >
-                <span className="text-black text-sm sm:text-base lg:text-lg leading-snug">
+                <span className="text-black text-[7px] phoneL:text-[8px] md:text-sm lg:text-sm leading-snug">
                   {testimonials[currentIndex].quote}
                 </span>
-                <span className="text-black text-base sm:text-lg lg:text-xl font-semibold">
+                <span className="text-black text-[9px] phoneL:text-[10px] md:text-lg lg:text-sm font-semibold">
                   {testimonials[currentIndex].name}
                 </span>
-                <span className="text-[#9D9D9D] italic text-xs sm:text-sm">
+                <span className="text-[#9D9D9D] text-[7px] phoneL:text-[10px] md:text-sm lg:text-sm italic">
                   {testimonials[currentIndex].title}
                 </span>
               </motion.div>
             </AnimatePresence>
 
             {/* Nav + dots */}
-            <div className="flex justify-between items-center mt-4 sm:mt-6">
+            <div className="flex justify-between items-center mt-1 md:mt-2">
               {/* Arrows */}
               <div className="flex gap-2 sm:gap-3">
                 <button onClick={goPrev} aria-label="Previous testimonial" className="p-0">
@@ -105,7 +105,7 @@ export default function Testimonials() {
                     src="/images/left-button.png"
                     width={28}
                     height={28}
-                    className="cursor-pointer hover:opacity-80"
+                    className="cursor-pointer w-[10px] h-[10px] phoneL:w-[15px] phoneL:h-[15px] md:w-[20px] md:h-[20px] hover:opacity-80"
                   />
                 </button>
                 <button onClick={goNext} aria-label="Next testimonial" className="p-0">
@@ -114,7 +114,7 @@ export default function Testimonials() {
                     src="/images/right-button.png"
                     width={28}
                     height={28}
-                    className="cursor-pointer hover:opacity-80"
+                    className="cursor-pointer w-[10px] h-[10px] phoneL:w-[15px] phoneL:h-[15px] md:w-[20px] md:h-[20px]  hover:opacity-80"
                   />
                 </button>
               </div>

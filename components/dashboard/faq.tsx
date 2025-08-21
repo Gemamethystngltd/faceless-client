@@ -18,8 +18,8 @@ export default function FAQ() {
     >
       {/* Header */}
       <div className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto mb-10">
-        <h2 className="text-[#241033] font-bold text-4xl">FAQ</h2>
-        <p className="text-gray-700 text-lg">
+        <h2 className="text-[#241033] font-bold text-2xl md:text-3xl">FAQ</h2>
+        <p className="text-gray-700 text-sm md:text-md">
           Unfiltered reviews from the people who use it — speakers and learners
           alike.
         </p>
@@ -41,7 +41,7 @@ export default function FAQ() {
               onClick={() => handleToggle(index)}
             >
               <div className="flex justify-between items-center">
-                <span className="uppercase text-lg font-semibold">
+                <span className="uppercase text-sm md:text-sm font-semibold">
                   {faq.question}
                 </span>
                 <FontAwesomeIcon
@@ -73,7 +73,7 @@ export default function FAQ() {
           </div>
         ))}
         <div className="flex items-center justify-center">
-          <button className="rounded-full w-40 h-10 p-3 flex items-center justify-center mt-2 text-white bg-[#662D91]">
+          <button className="rounded-full w-32 h-8 p-3 flex items-center justify-center mt-2 text-white bg-[#662D91]">
             See More
           </button>
         </div>

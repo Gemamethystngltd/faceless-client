@@ -19,11 +19,11 @@ export default function Webinar() {
 
         {/* Right: Content */}
         <div className="w-full lg:w-1/2 space-y-6">
-          <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#333] leading-snug">
+          <div className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#333] leading-snug">
             End-to-End Webinar Delivery — No Identity Required.
           </div>
 
-          <p className="text-gray-700 text-base sm:text-lg lg:text-xl leading-relaxed">
+          <p className="text-gray-700 text-md md:text-md leading-relaxed">
             Experience uninterrupted, high-definition webinar sessions without compromising your identity. Whether you're hosting or attending, Faceless delivers secure, low-latency streaming optimized for all devices. Our platform ensures that every session runs smoothly while keeping your face, name, and personal data hidden until you choose otherwise. Perfect for professionals, educators, and thought leaders who value privacy as much as performance.
           </p>
 
@@ -34,7 +34,7 @@ export default function Webinar() {
               <h4 className="text-xl sm:text-2xl font-semibold text-[#662D91] mb-2">
                 For Hosts
               </h4>
-              <p className="text-gray-600 text-base sm:text-lg leading-snug">
+              <p className="text-gray-600 text-md md:text-md leading-snug">
                 Host webinars confidently while maintaining complete anonymity and control over your content.
               </p>
             </div>
@@ -44,7 +44,7 @@ export default function Webinar() {
               <h4 className="text-xl sm:text-2xl font-semibold text-[#662D91] mb-2">
                 For Attendees
               </h4>
-              <p className="text-gray-600 text-base sm:text-lg leading-snug">
+              <p className="text-gray-600 text-md md:text-md leading-snug">
                 Open sessions freely, gaining insights without revealing your identity or personal information.
               </p>
             </div>

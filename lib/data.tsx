@@ -40,3 +40,54 @@ export const faqs = [
     answer: "No not all webinars are free..."
   }
 ];
+
+export const speakers = [
+  {
+    image: "/images/speaker-icon.png", // placeholder image path
+    name: "Jane Doe",
+    niche: "Cybersecurity",
+    bio: "Jane is a cybersecurity expert with 10+ years of experience.",
+    experience: "15+ Years of Experience",
+    accessContent: "*", // could be a URL or ID
+  },
+   {
+    image: "/images/speaker-icon.png", // placeholder image path
+    name: "Jane Doe",
+    niche: "Cybersecurity",
+    bio: "Jane is a cybersecurity expert with 10+ years of experience.",
+    experience: "15+ Years of Experience",
+    accessContent: "*", // could be a URL or ID
+  },
+    {
+    image: "/images/speaker-icon.png", // placeholder image path
+    name: "Jane Doe",
+    niche: "Cybersecurity",
+    bio: "Jane is a cybersecurity expert with 10+ years of experience.",
+    experience: "15+ Years of Experience",
+    accessContent: "*", // could be a URL or ID
+  },
+    {
+    image: "/images/speaker-icon.png", // placeholder image path
+    name: "Jane Doe",
+    niche: "Cybersecurity",
+    bio: "Jane is a cybersecurity expert with 10+ years of experience.",
+    experience: "15+ Years of Experience",
+    accessContent: "*", // could be a URL or ID
+  },
+    {
+    image: "/images/speaker-icon.png", // placeholder image path
+    name: "Jane Doe",
+    niche: "Cybersecurity",
+    bio: "Jane is a cybersecurity expert with 10+ years of experience.",
+    experience: "15+ Years of Experience",
+    accessContent: "*", // could be a URL or ID
+  },
+    {
+    image: "/images/speaker-icon.png", // placeholder image path
+    name: "Jane Doe",
+    niche: "Cybersecurity",
+    bio: "Jane is a cybersecurity expert with 10+ years of experience.",
+    experience: "15+ Years of Experience",
+    accessContent: "*", // could be a URL or ID
+  },
+];

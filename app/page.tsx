@@ -9,6 +9,7 @@ import ShareKnowledge from "components/dashboard/share-knowledge";
 import Testimonials from "components/dashboard/testimonials";
 import FAQ from "components/dashboard/faq";
 import Footer from "components/dashboard/footer";
+import ToTopBtn from "components/dashboard/toTopbtn";
 
 export default function Home() {
   return (
@@ -21,24 +22,24 @@ export default function Home() {
         {/* LEFT SIDE */}
         <div className="flex flex-col justify-center space-y-4 phoneP:justify-center phoneP:items-center phoneP:text-center laptop:items-start laptop:text-left 
                         phoneP:ml-0 phoneL:ml-4 tablet:ml-10 laptop:ml-40 max-w-[90%] tablet:max-w-3xl laptop:max-w-4xl">
-          <h1 className="text-3xl phoneL:text-4xl tablet:text-5xl font-bold leading-tight phoneP:mt-40">
+          <h1 className="text-2xl phoneL:text-3xl tablet:text-4xl font-bold leading-tight phoneP:mt-40">
             The Anonymous Gateway <br/> to Industrial Innovation.
           </h1>
-          <p className="text-base tablet:text-lg max-w-xl">
+          <p className="text-base tablet:text-md max-w-xl">
             Discover the future of AEC and Oil & Gas from undisclosed experts.
             Learn, contribute, and lead on your own terms.
           </p>
-          <button className="bg-purple-600 hover:bg-purple-700 w-36 tablet:w-40 text-white px-4 tablet:px-6 py-2 tablet:py-3 rounded-xl transition">
+          <button className="bg-purple-600 hover:bg-purple-700 w-30 tablet:w-38 text-white px-4 tablet:px-4 py-2 tablet:py-3 rounded-xl transition">
             Learn More
           </button>
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="flex flex-col bg-[#F3F3F3A1] text-center p-2 phoneL:p-3 laptop:p-4 rounded-2xl text-black 
+        <div className="flex flex-col bg-[#F3F3F3A1] text-center p-2 phoneL:p-2 laptop:p-3 rounded-2xl text-black 
                         phoneP:mt-6 laptop:mt-82 phoneP:mb-10 
                         phoneP:mx-auto laptop:mr-20 max-w-[30%] tablet:max-w-[40%] w-full tablet:w-auto">
           {/* Avatars */}
-          <div className="flex -space-x-3 justify-center mb-2">
+          <div className="flex -space-x-2 justify-center mb-2">
             {["image4", "image3", "image2", "image1"].map((img, i) => (
               <Image
                 key={i}
@@ -64,6 +65,7 @@ export default function Home() {
       </div>
 
       {/* OTHER SECTIONS */}
+       <ToTopBtn />
       <Services />
       <Webinar />
       <FacelessCon />

@@ -8,11 +8,11 @@ export default function FacelessCon() {
         
         {/* Left: Content */}
         <div className="w-full lg:w-1/2 space-y-6 flex flex-col justify-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#333] leading-snug">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#333] leading-snug">
             Your personal webinar hub.
           </h2>
 
-          <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+          <p className="text-gray-700 text-md md:text-md leading-relaxed">
             Everything you need to attend, explore and engage in one smart dashboard.
           </p>
 
@@ -25,7 +25,7 @@ export default function FacelessCon() {
                 width={34}
                 height={34}
               />
-              <span className="text-lg sm:text-xl">Track what's live right now</span>
+              <span className="text-md md:text-md">Track what's live right now</span>
             </div>
             <div className="flex flex-row items-center gap-3">
               <Image
@@ -34,7 +34,7 @@ export default function FacelessCon() {
                 width={34}
                 height={34}
               />
-              <span className="text-lg sm:text-xl">See what's coming next</span>
+              <span className="text-md md:text-md">See what's coming next</span>
             </div>
             <div className="flex flex-row items-center gap-3">
               <Image
@@ -43,7 +43,7 @@ export default function FacelessCon() {
                 width={34}
                 height={34}
               />
-              <span className="text-lg sm:text-xl">Access completed Webinars</span>
+              <span className="text-md md:text-md">Access completed Webinars</span>
             </div>
             <div className="flex flex-row items-center gap-3">
               <Image
@@ -52,12 +52,12 @@ export default function FacelessCon() {
                 width={34}
                 height={34}
               />
-              <span className="text-lg sm:text-xl">Discover more Webinars</span>
+              <span className="text-md md:text-md">Discover more Webinars</span>
             </div>
           </div>
 
           <div>
-            <button className="bg-[#662D91] text-white rounded-full px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base">
+            <button className="bg-[#662D91] text-white rounded-full px-4 py-3 sm:px-4 sm:py-4 text-sm sm:text-base">
               Start Exploring
             </button>
           </div>

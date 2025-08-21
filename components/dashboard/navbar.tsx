@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaEquals, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,21 +27,21 @@ export default function Navbar() {
 
   const toggleNavBar = () => setIsOpen(!isOpen);
 
-  const menuVariants = {
-    hidden: { opacity: 0, y: "-100%" },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeInOut",
-        when: "beforeChildren",
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
+  const menuVariants: Variants = {
+  hidden: { opacity: 0, y: "-100%" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut" as const, // ✅ fixes type error
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
-    exit: { opacity: 0, y: "-100%", transition: { duration: 0.4 } },
-  };
+  },
+  exit: { opacity: 0, y: "-100%", transition: { duration: 0.4 } },
+};
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -53,7 +54,7 @@ export default function Navbar() {
         className={`
     fixed top-0 left-0 z-60
     flex items-center justify-between
-    px-6 w-full h-20 bg-[#F0EAF4] shadow-md
+    px-6 w-full h-15 bg-[#F0EAF4] shadow-md
 
     /* Laptop and above: center & rounded */
     laptop:top-6 laptop:left-1/2 laptop:-translate-x-1/2
@@ -61,20 +62,6 @@ export default function Navbar() {
     laptop:rounded-full laptop:px-16 laptop:py-4
   `}
       >
-        {/* Left: Hamburger on mobile */}
-        <button
-          className="block laptop:hidden p-2 rounded-md text-white bg-[#662D91]"
-          onClick={toggleNavBar}
-          style={{
-            backgroundColor: isOpen ? "#F0EAF4" : "#662D91",
-          }}
-        >
-          {isOpen ? (
-            <FaTimes className="w-6 h-7 text-[#130022]" />
-          ) : (
-            <FaEquals className="w-6 h-7" />
-          )}
-        </button>
 
         {/* Middle: Logo */}
         <div className="flex items-center gap-3 cursor-pointer">
@@ -83,14 +70,14 @@ export default function Navbar() {
             alt="FacelessCon Logo"
             width={55}
             height={49}
-            className="w-10 h-auto sm:w-12 lg:w-[55px]"
+            className="w-10 h-auto sm:w-12 lg:w-[40px]"
           />
-          <span className="text-xl lg:text-3xl font-bold text-[#130022]">
+          <span className="text-lg lg:text-2xl font-bold text-[#130022]">
             FacelessCon
           </span>
         </div>
 
-        {/* Right: Desktop Nav Links + Auth */}
+        {/* Left: Desktop Nav Links + Auth */}
         <div className="hidden laptop:flex items-center gap-10">
           <ul className="flex gap-6 text-[#130022] font-medium">
             {navData.map((item) => (
@@ -110,6 +97,23 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
+
+
+
+        {/* Right: Hamburger on mobile */}
+        <button
+          className="block laptop:hidden p-2 rounded-md text-white bg-[#662D91]"
+          onClick={toggleNavBar}
+          style={{
+            backgroundColor: isOpen ? "#F0EAF4" : "#662D91",
+          }}
+        >
+          {isOpen ? (
+            <FaTimes className="w-3 md:w-4 h-3 md:h-4 text-[#130022]" />
+          ) : (
+            <FaEquals className="w-3 md:w-4 h-3 md:h-4" />
+          )}
+        </button>
       </nav>
 
       {/* Mobile Dropdown */}
@@ -117,18 +121,18 @@ export default function Navbar() {
         {isOpen && (
           <motion.div
             key="mobileMenu"
-            className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-8 text-xl font-semibold"
+            className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center gap-8 text-md font-semibold"
             variants={menuVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
-            <ul className="flex flex-col gap-6 items-center">
+            <ul className="flex flex-col gap-1 mt-5 items-center">
               {navData.map((data, index) => (
                 <motion.li
                   key={index}
                   variants={itemVariants}
-                  className="flex items-center gap-3 text-md tablet:text-lg"
+                  className="flex items-center gap-1 text-sm tablet:text-md mt-4"
                 >
                   <button
                     className="hover:underline"
@@ -141,7 +145,7 @@ export default function Navbar() {
               <hr className="border border-t-4 w-full text-webpurple" />
               <motion.li variants={itemVariants}>
                 <button
-                  className="mt-6 px-4 py-2 rounded-md bg-[#662D91] text-white font-bold text-md tablet:text-lg uppercase tracking-widest"
+                  className="mt-6 px-2 py-2 rounded-md bg-[#662D91] text-white font-semibold text-sm tablet:text-md uppercase tracking-widest"
                 >
                   Login
                 </button>
@@ -149,7 +153,7 @@ export default function Navbar() {
               <motion.li variants={itemVariants}>
                 <button
                   onClick={toggleNavBar}
-                  className="mt-6 px-4 py-2 rounded-md bg-[#662D91] text-white font-bold text-md tablet:text-lg uppercase tracking-widest"
+                  className="mt-4 px-2 py-2 rounded-md bg-[#662D91] text-white font-bold text-sm tablet:text-md uppercase tracking-widest"
                 >
                   Start For Free
                 </button>

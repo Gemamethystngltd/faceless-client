@@ -12,10 +12,10 @@ export default function Icons() {
 
           {/* Text */}
           <div className="relative z-20 h-full px-6 sm:px-12 lg:px-16 flex flex-col justify-center mt-10 lg:mt-0">
-            <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold">
+            <h2 className="text-white text-2xl md:text-3xl font-semibold">
               Your Privacy, Your <br /> Power.
             </h2>
-            <p className="text-white mt-2 text-sm sm:text-base">
+            <p className="text-white mt-2 text-sm md:text-md">
               Host and attend live digital experiences without ever revealing
               your face or identity. Total freedom, full control, zero pressure.
             </p>
@@ -40,10 +40,10 @@ export default function Icons() {
         <div className="flex-1 rounded-xl bg-[url('/images/background-1.png')] bg-no-repeat bg-cover bg-center relative overflow-hidden min-h-[18rem] lg:min-h-[25rem]">
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20 z-10 rounded-xl" />
           <div className="relative z-20 h-full px-6 sm:px-12 lg:px-16 flex flex-col justify-center">
-            <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold mt-10 lg:mt-0">
+            <h2 className="text-white text-2xl md:text-3xl font-semibold mt-10 lg:mt-0">
               Host, Earn, Stay <br /> Hidden.
             </h2>
-            <p className="text-white mt-2 text-sm sm:text-base">
+            <p className="text-white mt-2 text-sm md:text-md">
               Host and attend live digital experiences without ever revealing
               your face or identity. Total freedom, full control, zero pressure.
             </p>
@@ -56,10 +56,10 @@ export default function Icons() {
           <div className="rounded-xl bg-[url('/images/background-2.png')] bg-no-repeat bg-cover bg-center relative overflow-hidden min-h-[10rem] sm:min-h-[12rem]">
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20 z-10 rounded-xl" />
             <div className="relative z-20 h-full px-6 sm:px-12 lg:px-16 flex flex-col justify-center">
-              <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold mt-10 lg:mt-0">
+              <h2 className="text-white text-2xl md:text-3xl font-semibold mt-10 lg:mt-0">
                 For Everyone.
               </h2>
-              <p className="text-white mt-2 text-sm sm:text-base">
+              <p className="text-white mt-2 text-sm md:text-md">
                 Your data is encrypted, your identity stays yours.
               </p>
             </div>

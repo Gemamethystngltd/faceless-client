@@ -32,7 +32,7 @@ export default function ShareKnowledge() {
             Your expertise can inspire others, even anonymously. Join our
             platform to share your insights while maintaining your privacy.
           </span>
-          <button className="rounded-full px-6 py-2 sm:w-40 flex items-center justify-center mt-2 text-white bg-[#662D91] hover:bg-[#5a2680] transition-colors">
+          <button className="rounded-full w-full px-16 py-2 flex items-center justify-center mt-2 text-white bg-[#662D91] hover:bg-[#5a2680] transition-colors">
             Host Webinar
           </button>
         </div>
