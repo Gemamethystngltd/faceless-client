@@ -30,7 +30,7 @@ export default function RegisterAsModal() {
   const router = useRouter();
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
+      className="fixed inset-0 flex items-center justify-center bg-black/50 z-[100]"
       onClick={() => setIsModalOpen(false)}
     >
       <div

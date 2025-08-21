@@ -7,10 +7,10 @@ export default function Dashboard() {
   const dashboardWebinars = webinars.slice(0, 3);
   return (
     <div className="flex flex-col space-y-5">
-      <div className="grid grid-cols-[2fr_1fr] gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-5">
         <div className="w-full space-y-5">
-          <div className="border border-[#662D91] flex justify-between items-center px-5 py-7 rounded-2xl bg-[url('/svgs/faceless-skeleton.svg')] bg-no-repeat">
-            <div className="w-1/2 space-y-5">
+          <div className="border border-[#662D91] flex max-sm:flex-col justify-between items-center px-5 py-7 rounded-2xl bg-[url('/svgs/faceless-skeleton.svg')] bg-no-repeat">
+            <div className="md:w-1/2 space-y-5">
               <h1 className="text-3xl">Hi Emverse!</h1>
               <p>
                 Facecan is hosting an event on the 3rd of October don’t miss out
@@ -24,7 +24,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <DashboardStat
               icon="LiveIcon"
               status="Ongoing"
@@ -51,7 +51,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="mt-5">
+      <div className="mt-5 space-y-3">
         <h2 className="text-2xl font-semibold">Discover Webinars</h2>
         <Webinars webinars={dashboardWebinars} />
       </div>

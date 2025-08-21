@@ -14,6 +14,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import FacelessIcon from "./icons/FacelessIcon";
+import { useApp } from "@/contexts/AppContext";
 
 interface NavItemType {
   name: string;
@@ -51,11 +52,12 @@ const navItems: NavItemType[] = [
 
 export default function SideBar() {
   const pathname = usePathname();
+  const { isSideBarOpen, setIsSideBarOpen } = useApp();
   return (
     <aside
       className={cn(
-        "min-h-screen max-sm:h-full max-lg:-translate-x-full max-lg:fixed max-lg:z-20 w-[290px] flex flex-col py-8 px-4 space-y-6 transition-all duration-300 border border-r-[#DDDDDD]"
-        // isSideBarOpen && "max-lg:translate-x-0"
+        "min-h-screen max-sm:h-full max-lg:-translate-x-full max-lg:fixed max-lg:z-20 w-[290px] flex flex-col py-8 px-4 space-y-6 transition-all duration-300 border z-50 bg-white border-r-[#DDDDDD]",
+        isSideBarOpen && "max-lg:translate-x-0"
       )}
     >
       <div className="flex items-center space-x-3 px-4 mb-6 relative">
@@ -66,7 +68,10 @@ export default function SideBar() {
           alt="Faceless Icon"
         />
         <p className="font-semibold text-2xl">FacelessCon</p>
-        <X className="absolute right-3 top-0 cursor-pointer xl:hidden" />
+        <X
+          className="absolute right-3 top-0 cursor-pointer xl:hidden"
+          onClick={() => setIsSideBarOpen(false)}
+        />
       </div>
 
       <nav className="flex-1">

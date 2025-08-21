@@ -5,10 +5,14 @@ import { useRouter } from "next/navigation";
 import { FaEquals, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Variants } from "framer-motion";
+import { useAuth } from "@/contexts/AuthContext";
+import RegisterAsModal from "../RegisterAsModal";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const { isModalOpen, setIsModalOpen } = useAuth();
 
   const handleNavClick = (path: string) => {
     setIsOpen(false);
@@ -81,18 +85,26 @@ export default function Navbar() {
         <div className="hidden laptop:flex items-center gap-10">
           <ul className="flex gap-6 text-[#130022] font-medium">
             {navData.map((item) => (
-              <li
+              <Link
+                href={item.linkto}
                 key={item.linkto}
                 className="cursor-pointer hover:text-[#662D91]"
-                onClick={() => handleNavClick(item.linkto)}
               >
                 {item.name}
-              </li>
+              </Link>
             ))}
           </ul>
           <ul className="flex gap-4 items-center text-[#130022]">
-            <li className="cursor-pointer hover:text-[#662D91]">Login</li>
-            <li className="cursor-pointer bg-[#662D91] text-white px-4 py-2 rounded-full hover:bg-[#4b1a74] transition">
+            <li
+              className="cursor-pointer hover:text-[#662D91]"
+              onClick={() => router.push("/login")}
+            >
+              Login
+            </li>
+            <li
+              className="cursor-pointer bg-[#662D91] text-white px-4 py-2 rounded-full hover:bg-[#4b1a74] transition"
+              onClick={() => setIsModalOpen(true)}
+            >
               Start for free
             </li>
           </ul>
@@ -146,13 +158,17 @@ export default function Navbar() {
               <motion.li variants={itemVariants}>
                 <button
                   className="mt-6 px-2 py-2 rounded-md bg-[#662D91] text-white font-semibold text-sm tablet:text-md uppercase tracking-widest"
+                  onClick={() => router.push("/login")}
                 >
                   Login
                 </button>
               </motion.li>
               <motion.li variants={itemVariants}>
                 <button
-                  onClick={toggleNavBar}
+                  onClick={() => {
+                    setIsModalOpen(true);
+                    toggleNavBar();
+                  }}
                   className="mt-4 px-2 py-2 rounded-md bg-[#662D91] text-white font-bold text-sm tablet:text-md uppercase tracking-widest"
                 >
                   Start For Free
@@ -162,6 +178,8 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {isModalOpen && <RegisterAsModal />}
     </>
   );
 }
