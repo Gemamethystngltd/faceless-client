@@ -25,7 +25,7 @@ export default function FacelessCon() {
                 width={34}
                 height={34}
               />
-              <span className="text-md md:text-md">Track what's live right now</span>
+              <span className="text-md md:text-md">Track what&apos;s live right now</span>
             </div>
             <div className="flex flex-row items-center gap-3">
               <Image
@@ -34,7 +34,7 @@ export default function FacelessCon() {
                 width={34}
                 height={34}
               />
-              <span className="text-md md:text-md">See what's coming next</span>
+              <span className="text-md md:text-md">See what&apos;s coming next</span>
             </div>
             <div className="flex flex-row items-center gap-3">
               <Image

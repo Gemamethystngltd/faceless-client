@@ -24,7 +24,7 @@ export default function Webinar() {
           </div>
 
           <p className="text-gray-700 text-md md:text-md leading-relaxed">
-            Experience uninterrupted, high-definition webinar sessions without compromising your identity. Whether you're hosting or attending, Faceless delivers secure, low-latency streaming optimized for all devices. Our platform ensures that every session runs smoothly while keeping your face, name, and personal data hidden until you choose otherwise. Perfect for professionals, educators, and thought leaders who value privacy as much as performance.
+            Experience uninterrupted, high-definition webinar sessions without compromising your identity. Whether you&apos;re hosting or attending, Faceless delivers secure, low-latency streaming optimized for all devices. Our platform ensures that every session runs smoothly while keeping your face, name, and personal data hidden until you choose otherwise. Perfect for professionals, educators, and thought leaders who value privacy as much as performance.
           </p>
 
           {/* Host & Attendee Cards */}

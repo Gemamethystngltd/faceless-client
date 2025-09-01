@@ -59,6 +59,7 @@ export default function AppTopNav() {
       <div className="flex justify-between items-center space-x-2 md:space-x-3 flex-1 max-w-2xl ml-4">
         <div className="relative flex-1 md:max-w-md">
           <input
+          aria-label="*"
             className="w-full bg-[#F1F1F1] rounded-full py-2 pl-10 pr-4 text-sm outline-none focus:ring-2 focus:ring-[#532174] transition-colors duration-200 peer"
             placeholder=""
           />

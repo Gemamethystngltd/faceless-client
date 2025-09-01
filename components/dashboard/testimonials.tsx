@@ -43,7 +43,7 @@ export default function Testimonials() {
       <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto mb-10">
         <p className="text-[#662D91] text-xs sm:text-sm mt-4 sm:mt-8">TESTIMONIALS</p>
         <h2 className="text-black font-bold text-2xl sm:text-3xl lg:text-4xl">
-          What They're Saying About Faceless
+          What They&apos;re Saying About Faceless
         </h2>
         <p className="text-gray-700 text-sm sm:text-base">
           Unfiltered reviews from the people who use it <br className="hidden sm:block" /> speakers and
